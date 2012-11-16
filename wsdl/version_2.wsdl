@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="VirtualCard0200" targetNamespace="http://cows0200.comdata.com/VirtualCard0200/" xmlns:cowsvc="http://cows0200.comdata.com/VirtualCard0200/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cows0200.comdata.com/VirtualCard0200/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:simpleType name="char">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="1"/>
+				</xsd:restriction>
+
+			</xsd:simpleType>
+			<xsd:simpleType name="CardIdentifierType">
+
+				<xsd:restriction base="cowsvc:char">
+
+					<xsd:enumeration value="T"/>
+					<xsd:enumeration value="N"/>
+				</xsd:restriction>
+
+			</xsd:simpleType>
+
+			<xsd:simpleType name="YesNoFlag">
+
+				<xsd:restriction base="cowsvc:char">
+					<xsd:enumeration value="Y"/>
+					<xsd:enumeration value="N"/>
+				</xsd:restriction>
+
+			</xsd:simpleType>
+
+
+			<xsd:complexType name="CardInquiry">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifier" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifierType" type="cowsvc:CardIdentifierType">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+					<xsd:element name="secureCardInfo" nillable="true" type="cowsvc:YesNoFlag">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="CardInquiryResponse">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardStatus" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="CVC2" type="xsd:short"/>
+
+
+					<xsd:element name="dollarAmount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="expirationMMYY" type="xsd:int"/>
+
+					<xsd:element name="firstName" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode1" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode1Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode2" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode2Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode3" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode3Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode4" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode4Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="lastName" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="MCCCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="miscCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="numTransactionsAllowedForAuth" type="xsd:short">
+					</xsd:element>
+
+					<xsd:element name="openForAirlineMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForBusinessServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForCarRentalsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFinancialServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFuelMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForHotelsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForLegalAndInsuranceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMaintenanceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMedicalMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscTransportationMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForRestaurantsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="PONumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="promptedIDDriver" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="repairOrderNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="responseCode" type="xsd:int"/>
+
+					<xsd:element name="responseMessage" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="totalLaborCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalPartsCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalTaxCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="useGLCode1AsDefault" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="vehicleNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorInvoiceNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyPeriod" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyReport" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="mustBeExactAmountForAuth" type="xsd:boolean">
+					</xsd:element>
+
+					<xsd:element name="availableBalance" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="cardToken" type="xsd:string"/>
+
+					<xsd:element name="cardNumberHash" type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardListing">
+
+				<xsd:sequence>
+
+					<xsd:element name="account" type="xsd:string"/>
+
+					<xsd:element name="custID" type="xsd:string"/>
+
+					<xsd:element name="secureCardInfo" type="cowsvc:YesNoFlag">
+					</xsd:element>
+					<xsd:element minOccurs="0" name="cardIdentifier" type="xsd:string">
+						<xsd:annotation>
+							<xsd:documentation>
+								Card Identifier for sorting purposes.
+								The initial implementation only supports
+								Card Numbers.
+							</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="cardIdentifierType" type="cowsvc:CardIdentifierType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cardIdentifierSort">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								<xsd:enumeration value="ASC"/>
+								<xsd:enumeration value="DESC"/>
+								<xsd:enumeration value="ASCENDING"/>
+								<xsd:enumeration value="DESCENDING"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="maxRows">
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:int">
+
+								<xsd:minInclusive value="1"/>
+
+								<xsd:maxInclusive value="100"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardListingResponse">
+
+				<xsd:sequence>
+
+					<xsd:element name="responseCode" type="xsd:int"/>
+
+					<xsd:element name="responseMessage" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element maxOccurs="unbounded" name="Card" type="cowsvc:CardListingResponseItem">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardListingResponseItem">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string"/>
+
+					<xsd:element name="cardNumber" nillable="true" type="xsd:string"/>
+
+					<xsd:element name="cardStatus" type="cowsvc:char"/>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string"/>
+
+
+					<xsd:element name="dollarAmount" nillable="true" type="xsd:decimal"/>
+
+					<xsd:element name="expirationMMYY" type="xsd:int"/>
+
+					<xsd:element name="firstName" nillable="true" type="xsd:string"/>
+
+					<xsd:element maxOccurs="1" minOccurs="0" name="cardToken" type="xsd:string"/>
+
+					<xsd:element maxOccurs="1" minOccurs="0" name="cardNumberHash" type="xsd:string"/>
+
+					<xsd:element name="availableBalance" type="xsd:decimal"/>
+					<xsd:element name="lastName" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+
+
+			<xsd:element name="CardInquiryResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="cardInquiryResponse" type="cowsvc:CardInquiryResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardInquiry">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="cardInquiry" type="cowsvc:CardInquiry"/>
+					</xsd:sequence>
+				</xsd:complexType>
+
+			</xsd:element>
+			<xsd:complexType name="CardAdd">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+					<xsd:element name="dollarAmount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="expirationMMYY" type="xsd:int"/>
+
+					<xsd:element name="firstName" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode1" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode1Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode2" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode2Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode3" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode3Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode4" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode4Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="lastName" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="MCCCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="miscCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="numTransactionsAllowedForAuth" type="xsd:short">
+					</xsd:element>
+
+					<xsd:element name="openForAirlineMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForBusinessServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForCarRentalsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFinancialServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFuelMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForHotelsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForLegalAndInsuranceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMaintenanceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMedicalMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscTransportationMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForRestaurantsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="PONumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="promptedIDDriver" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="repairOrderNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="totalLaborCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalPartsCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalTaxCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="useGLCode1AsDefault" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="vehicleNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorInvoiceNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyPeriod" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyReport" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="mustBeExactAmountForAuth" type="xsd:boolean">
+					</xsd:element>
+
+					<xsd:element name="secureCardInfo" type="cowsvc:YesNoFlag">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardAddResponse">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="CVC2" type="xsd:short"/>
+
+
+					<xsd:element name="expirationMMYY" type="xsd:int"/>
+
+					<xsd:element name="responseCode" type="xsd:int"/>
+
+					<xsd:element name="responseMessage" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardToken" type="xsd:string"/>
+
+					<xsd:element name="cardNumberHash" type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardBlockUnblock">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifier" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifierType" type="cowsvc:CardIdentifierType">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+
+
+
+					<xsd:element name="cardActive" type="xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardBlockUnblockResponse">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+					<xsd:element name="responseCode" type="xsd:int"/>
+
+					<xsd:element name="responseMessage" nillable="true" type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardUpdate">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifier" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="cardIdentifierType" type="cowsvc:CardIdentifierType">
+					</xsd:element>
+
+					<xsd:element name="cardStatus" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+					<xsd:element name="dollarAmount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode1" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode1Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode2" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode2Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode3" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode3Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="GLCode4" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="GLCode4Amount" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="MCCCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="miscCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="numTransactionsAllowedForAuth" type="xsd:short">
+					</xsd:element>
+
+					<xsd:element name="openForAirlineMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForBusinessServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForCarRentalsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFinancialServicesMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForFuelMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForHotelsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForLegalAndInsuranceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMaintenanceMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMedicalMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForMiscTransportationMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="openForRestaurantsMerchantGroup" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="PONumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="promptedIDDriver" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="repairOrderNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="totalLaborCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalPartsCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="totalTaxCost" nillable="true" type="xsd:decimal">
+					</xsd:element>
+
+					<xsd:element name="useGLCode1AsDefault" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="vehicleNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorInvoiceNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="vendorNumber" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyPeriod" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="warrantyReport" type="cowsvc:char">
+					</xsd:element>
+
+					<xsd:element name="mustBeExactAmountForAuth" type="xsd:boolean">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CardUpdateResponse">
+
+				<xsd:sequence>
+
+					<xsd:element name="accountCode" nillable="true" type="xsd:string">
+					</xsd:element>
+
+					<xsd:element name="customerId" nillable="true" type="xsd:string">
+					</xsd:element>
+
+
+					<xsd:element name="responseCode" type="xsd:int"/>
+
+					<xsd:element name="responseMessage" nillable="true" type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:element name="CardListing">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardListing" type="cowsvc:CardListing"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardListingResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardListingResponse" type="cowsvc:CardListingResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardAdd">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardAdd" type="cowsvc:CardAdd"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardAddResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardAddResponse" type="cowsvc:CardAddResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardUpdate">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardUpdate" type="cowsvc:CardUpdate"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardUpdateResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardUpdateResponse" type="cowsvc:CardUpdateResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardBlockUnblock">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardBlockUnblock" type="cowsvc:CardBlockUnblock"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CardBlockUnblockResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="cardBlockUnblockResponse" type="cowsvc:CardBlockUnblockResponse"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CardUpdateResponse">
+    <wsdl:part element="cowsvc:CardUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardAddResponse">
+    <wsdl:part element="cowsvc:CardAddResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardBlockUnblockRequest">
+    <wsdl:part element="cowsvc:CardBlockUnblock" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardBlockUnblockResponse">
+    <wsdl:part element="cowsvc:CardBlockUnblockResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardAddRequest">
+    <wsdl:part element="cowsvc:CardAdd" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardListingResponse">
+    <wsdl:part element="cowsvc:CardListingResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardListingRequest">
+    <wsdl:part element="cowsvc:CardListing" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardUpdateRequest">
+    <wsdl:part element="cowsvc:CardUpdate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardInquiryResponse">
+    <wsdl:part element="cowsvc:CardInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardInquiryRequest">
+    <wsdl:part element="cowsvc:CardInquiry" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="VirtualCard0200">
+    <wsdl:operation name="CardInquiry">
+      <wsdl:input message="cowsvc:CardInquiryRequest"/>
+      <wsdl:output message="cowsvc:CardInquiryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardListing">
+      <wsdl:input message="cowsvc:CardListingRequest"/>
+      <wsdl:output message="cowsvc:CardListingResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardAdd">
+      <wsdl:input message="cowsvc:CardAddRequest"/>
+      <wsdl:output message="cowsvc:CardAddResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardUpdate">
+      <wsdl:input message="cowsvc:CardUpdateRequest"/>
+      <wsdl:output message="cowsvc:CardUpdateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="CardBlockUnblock">
+      <wsdl:input message="cowsvc:CardBlockUnblockRequest"/>
+      <wsdl:output message="cowsvc:CardBlockUnblockResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VirtualCard0200" type="cowsvc:VirtualCard0200">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CardInquiry">
+      <soap:operation soapAction="http://cows0200.comdata.com/VirtualCard0200/CardInquiry"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardListing">
+      <soap:operation soapAction="http://cows0200.comdata.com/VirtualCard0200/CardListing"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardAdd">
+      <soap:operation soapAction="http://cows0200.comdata.com/VirtualCard0200/CardAdd"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardUpdate">
+      <soap:operation soapAction="http://cows0200.comdata.com/VirtualCard0200/CardUpdate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardBlockUnblock">
+      <soap:operation soapAction="http://cows0200.comdata.com/VirtualCard0200/CardBlockUnblock"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VirtualCard0200">
+    <wsdl:port binding="cowsvc:VirtualCard0200" name="VirtualCard0200">
+      <soap:address location="https://w6cert.iconnectdata.com:443/cows2.0/services/VirtualCard0200"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

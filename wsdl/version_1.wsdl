@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://cows.comdata.com" xmlns:impl="http://cows.comdata.com" xmlns:intf="http://cows.comdata.com" xmlns:tns2="http://xml.apache.org/xml-soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <schema targetNamespace="http://cows.comdata.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns2="http://xml.apache.org/xml-soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="PinResetRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <element name="pinResetResponse">
+    <complexType>
+     <sequence>
+      <element name="pinResetReturn" nillable="true" type="impl:PinResetResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cardUpdate">
+    <complexType>
+     <sequence>
+      <element name="updateRequest" nillable="true" type="impl:CardUpdateRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cardUpdateResponse">
+    <complexType>
+     <sequence>
+      <element name="cardUpdateReturn" nillable="true" type="impl:CardUpdateResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardInquiryAsync">
+    <complexType>
+     <sequence>
+      <element name="inquiryRequest" nillable="true" type="impl:VirtualCardInquiryRequest"/>
+      <element name="asyncSecurity" nillable="true" type="impl:AsyncSecurity"/>
+      <element name="epid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardInquiryAsyncResponse">
+    <complexType>
+     <sequence/>
+    </complexType>
+   </element>
+   <element name="virtualCardAddAsync">
+    <complexType>
+     <sequence>
+      <element name="addRequest" nillable="true" type="impl:VirtualCardAddRequest"/>
+      <element name="asyncSecurity" nillable="true" type="impl:AsyncSecurity"/>
+      <element name="epid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardAddAsyncResponse">
+    <complexType>
+     <sequence/>
+    </complexType>
+   </element>
+   <element name="cardBlockUnblock">
+    <complexType>
+     <sequence>
+      <element name="blockRequest" nillable="true" type="impl:CardBlockUnblockRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cardBlockUnblockResponse">
+    <complexType>
+     <sequence>
+      <element name="cardBlockUnblockReturn" nillable="true" type="impl:CardBlockUnblockResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardUpdate">
+    <complexType>
+     <sequence>
+      <element name="updateRequest" nillable="true" type="impl:VirtualCardUpdateRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardUpdateResponse">
+    <complexType>
+     <sequence>
+      <element name="virtualCardUpdateReturn" nillable="true" type="impl:VirtualCardUpdateResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckBatch">
+    <complexType>
+     <sequence>
+      <element name="batchRequest" nillable="true" type="impl:ExpressCheckBatchRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckBatchResponse">
+    <complexType>
+     <sequence>
+      <element name="expressCheckBatchReturn" nillable="true" type="impl:ExpressCheckBatchResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckRetrieval">
+    <complexType>
+     <sequence>
+      <element name="retrievalRequest" nillable="true" type="impl:ExpressCheckRetrievalRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckRetrievalResponse">
+    <complexType>
+     <sequence>
+      <element name="expressCheckRetrievalReturn" nillable="true" type="impl:ExpressCheckRetrievalResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadMoney">
+    <complexType>
+     <sequence>
+      <element name="loadRequest" nillable="true" type="impl:LoadMoneyRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadMoneyResponse">
+    <complexType>
+     <sequence>
+      <element name="loadMoneyReturn" nillable="true" type="impl:LoadMoneyResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadMoneyCancel">
+    <complexType>
+     <sequence>
+      <element name="cancelRequest" nillable="true" type="impl:LoadMoneyCancelRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadMoneyCancelResponse">
+    <complexType>
+     <sequence>
+      <element name="loadMoneyCancelReturn" nillable="true" type="impl:LoadMoneyCancelResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pinSet">
+    <complexType>
+     <sequence>
+      <element name="setRequest" nillable="true" type="impl:PinSetRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="pinSetResponse">
+    <complexType>
+     <sequence>
+      <element name="pinSetReturn" nillable="true" type="impl:PinSetResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardInquiry">
+    <complexType>
+     <sequence>
+      <element name="inquiryRequest" nillable="true" type="impl:VirtualCardInquiryRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardInquiryResponse">
+    <complexType>
+     <sequence>
+      <element name="virtualCardInquiryReturn" nillable="true" type="impl:VirtualCardInquiryResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardAdd">
+    <complexType>
+     <sequence>
+      <element name="addRequest" nillable="true" type="impl:VirtualCardAddRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardAddResponse">
+    <complexType>
+     <sequence>
+      <element name="virtualCardAddReturn" nillable="true" type="impl:VirtualCardAddResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cardInquiry">
+    <complexType>
+     <sequence>
+      <element name="inquiryRequest" nillable="true" type="impl:CardInquiryRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cardInquiryResponse">
+    <complexType>
+     <sequence>
+      <element name="cardInquiryReturn" nillable="true" type="impl:CardInquiryResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckInquiry">
+    <complexType>
+     <sequence>
+      <element name="inquiryRequest" nillable="true" type="impl:ExpressCheckInquiryRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckInquiryResponse">
+    <complexType>
+     <sequence>
+      <element name="expressCheckInquiryReturn" nillable="true" type="impl:ExpressCheckInquiryResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckIssue">
+    <complexType>
+     <sequence>
+      <element name="issueRequest" nillable="true" type="impl:ExpressCheckIssueRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckIssueResponse">
+    <complexType>
+     <sequence>
+      <element name="expressCheckIssueReturn" nillable="true" type="impl:ExpressCheckIssueResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckMaintenance">
+    <complexType>
+     <sequence>
+      <element name="maintRequest" nillable="true" type="impl:ExpressCheckMaintenanceRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="expressCheckMaintenanceResponse">
+    <complexType>
+     <sequence>
+      <element name="expressCheckMaintenanceReturn" nillable="true" type="impl:ExpressCheckMaintenanceResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardUpdateAsync">
+    <complexType>
+     <sequence>
+      <element name="updateRequest" nillable="true" type="impl:VirtualCardUpdateRequest"/>
+      <element name="asyncSecurity" nillable="true" type="impl:AsyncSecurity"/>
+      <element name="epid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="virtualCardUpdateAsyncResponse">
+    <complexType>
+     <sequence/>
+    </complexType>
+   </element>
+   <element name="pinReset">
+    <complexType>
+     <sequence>
+      <element name="resetRequest" nillable="true" type="impl:PinResetRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="PinResetResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardUpdateRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="atmAccess" type="tns2:char"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardStatus" type="tns2:char"/>
+     <element name="cashLimit" type="xsd:double"/>
+     <element name="cashRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="dieselGallonLimit" type="xsd:int"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="driverLicenseNumber" nillable="true" type="xsd:string"/>
+     <element name="driverLicenseState" nillable="true" type="xsd:string"/>
+     <element name="employeeNumber" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="oilDollarLimit" type="xsd:double"/>
+     <element name="oilQuartLimit" type="xsd:int"/>
+     <element name="oilRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="oneTimeCashLimit" type="xsd:double"/>
+     <element name="oneTimePurchaseLimit" type="xsd:double"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="phoneLimit" type="xsd:double"/>
+     <element name="phoneRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="primaryCardNumber" nillable="true" type="xsd:string"/>
+     <element name="purchaseLimit" type="xsd:double"/>
+     <element name="purchaseRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="reeferGallonLimit" type="xsd:int"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="trailerNumber" nillable="true" type="xsd:string"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="unitNumber" nillable="true" type="xsd:string"/>
+     <element name="voiceMailEmail" type="tns2:char"/>
+     <element name="cashRenewDailyReset" type="xsd:boolean"/>
+     <element name="cashRenewResetByTrip" type="xsd:boolean"/>
+     <element name="companyStandards" type="xsd:boolean"/>
+     <element name="conferenceCall" type="xsd:boolean"/>
+     <element name="expressCash" type="xsd:boolean"/>
+     <element name="faxMail" type="xsd:boolean"/>
+     <element name="fuelPurchase" type="xsd:boolean"/>
+     <element name="informationService" type="xsd:boolean"/>
+     <element name="limitedNetworkByCard" type="xsd:boolean"/>
+     <element name="messageService" type="xsd:boolean"/>
+     <element name="oilRenewDailyReset" type="xsd:boolean"/>
+     <element name="oilRenewResetByTrip" type="xsd:boolean"/>
+     <element name="oneTimeFuelOffNetwork" type="xsd:boolean"/>
+     <element name="phoneRenewDailyReset" type="xsd:boolean"/>
+     <element name="phoneRenewResetByTrip" type="xsd:boolean"/>
+     <element name="phoneService" type="xsd:boolean"/>
+     <element name="purchaseRenewDailyReset" type="xsd:boolean"/>
+     <element name="purchaseRenewResetByTrip" type="xsd:boolean"/>
+     <element name="vruAccess" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardUpdateResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardInquiryRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="AsyncSecurity">
+    <sequence>
+     <element name="callbackUrl" nillable="true" type="xsd:anyURI"/>
+     <element name="domain" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardAddRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="dollarAmount" nillable="true" type="xsd:decimal"/>
+     <element name="expirationMMYY" type="xsd:int"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="GLCode1" nillable="true" type="xsd:string"/>
+     <element name="GLCode1Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode2" nillable="true" type="xsd:string"/>
+     <element name="GLCode2Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode3" nillable="true" type="xsd:string"/>
+     <element name="GLCode3Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode4" nillable="true" type="xsd:string"/>
+     <element name="GLCode4Amount" nillable="true" type="xsd:decimal"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="MCCCode" nillable="true" type="xsd:string"/>
+     <element name="miscCost" nillable="true" type="xsd:decimal"/>
+     <element name="numTransactionsAllowedForAuth" type="xsd:short"/>
+     <element name="openForAirlineMerchantGroup" type="tns2:char"/>
+     <element name="openForBusinessServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForCarRentalsMerchantGroup" type="tns2:char"/>
+     <element name="openForFinancialServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForFuelMerchantGroup" type="tns2:char"/>
+     <element name="openForHotelsMerchantGroup" type="tns2:char"/>
+     <element name="openForLegalAndInsuranceMerchantGroup" type="tns2:char"/>
+     <element name="openForMaintenanceMerchantGroup" type="tns2:char"/>
+     <element name="openForMedicalMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscTransportationMerchantGroup" type="tns2:char"/>
+     <element name="openForRestaurantsMerchantGroup" type="tns2:char"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="PONumber" nillable="true" type="xsd:string"/>
+     <element name="promptedIDDriver" nillable="true" type="xsd:string"/>
+     <element name="repairOrderNumber" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="totalLaborCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalPartsCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalTaxCost" nillable="true" type="xsd:decimal"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="useGLCode1AsDefault" type="tns2:char"/>
+     <element name="vehicleNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorInvoiceNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorNumber" nillable="true" type="xsd:string"/>
+     <element name="warrantyPeriod" nillable="true" type="xsd:string"/>
+     <element name="warrantyReport" type="tns2:char"/>
+     <element name="mustBeExactAmountForAuth" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardBlockUnblockRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="cardActive" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardBlockUnblockResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardUpdateRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardStatus" type="tns2:char"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="dollarAmount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode1" nillable="true" type="xsd:string"/>
+     <element name="GLCode1Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode2" nillable="true" type="xsd:string"/>
+     <element name="GLCode2Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode3" nillable="true" type="xsd:string"/>
+     <element name="GLCode3Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode4" nillable="true" type="xsd:string"/>
+     <element name="GLCode4Amount" nillable="true" type="xsd:decimal"/>
+     <element name="MCCCode" nillable="true" type="xsd:string"/>
+     <element name="miscCost" nillable="true" type="xsd:decimal"/>
+     <element name="numTransactionsAllowedForAuth" type="xsd:short"/>
+     <element name="openForAirlineMerchantGroup" type="tns2:char"/>
+     <element name="openForBusinessServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForCarRentalsMerchantGroup" type="tns2:char"/>
+     <element name="openForFinancialServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForFuelMerchantGroup" type="tns2:char"/>
+     <element name="openForHotelsMerchantGroup" type="tns2:char"/>
+     <element name="openForLegalAndInsuranceMerchantGroup" type="tns2:char"/>
+     <element name="openForMaintenanceMerchantGroup" type="tns2:char"/>
+     <element name="openForMedicalMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscTransportationMerchantGroup" type="tns2:char"/>
+     <element name="openForRestaurantsMerchantGroup" type="tns2:char"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="PONumber" nillable="true" type="xsd:string"/>
+     <element name="promptedIDDriver" nillable="true" type="xsd:string"/>
+     <element name="repairOrderNumber" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="totalLaborCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalPartsCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalTaxCost" nillable="true" type="xsd:decimal"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="useGLCode1AsDefault" type="tns2:char"/>
+     <element name="vehicleNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorInvoiceNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorNumber" nillable="true" type="xsd:string"/>
+     <element name="warrantyPeriod" nillable="true" type="xsd:string"/>
+     <element name="warrantyReport" type="tns2:char"/>
+     <element name="mustBeExactAmountForAuth" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardUpdateResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckBatchRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="numberOfCodes" type="xsd:short"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckBatchResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="amountFactor" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="seedCodeArray" nillable="true" type="impl:ArrayOfSeedCode"/>
+     <element name="sequenceNumber" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="SeedCode">
+    <sequence>
+     <element name="amountFactor" nillable="true" type="xsd:string"/>
+     <element name="sequenceNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfSeedCode">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="SeedCode" nillable="true" type="impl:SeedCode"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckRetrievalRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="amount" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="driverNumber" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="fleetId" nillable="true" type="xsd:string"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="locationCode" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="plusLessFlag" type="tns2:char"/>
+     <element name="purposeCode" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="unitNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckRetrievalResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="codeAmount" type="xsd:double"/>
+     <element name="codeFee" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="expressCheckNumber" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoadMoneyRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="addSubtractFlag" type="tns2:char"/>
+     <element name="availableDateTime" nillable="true" type="xsd:dateTime"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="loadAmount" type="xsd:double"/>
+     <element name="miscellaneousData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="plusLessFlag" type="tns2:char"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="directDeposit" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoadMoneyResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="addSubtractFlag" type="tns2:char"/>
+     <element name="cardBalance" type="xsd:double"/>
+     <element name="cardBalanceAfterDepositPosted" type="xsd:double"/>
+     <element name="charges" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="loadAmount" type="xsd:double"/>
+     <element name="plusLessFlag" type="tns2:char"/>
+     <element name="referenceNumber" type="xsd:long"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoadMoneyCancelRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="referenceNumber" type="xsd:long"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoadMoneyCancelResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="PinSetRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="PinSetResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardInquiryResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardStatus" type="tns2:char"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="CVC2" type="xsd:short"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="dollarAmount" nillable="true" type="xsd:decimal"/>
+     <element name="expirationMMYY" type="xsd:int"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="GLCode1" nillable="true" type="xsd:string"/>
+     <element name="GLCode1Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode2" nillable="true" type="xsd:string"/>
+     <element name="GLCode2Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode3" nillable="true" type="xsd:string"/>
+     <element name="GLCode3Amount" nillable="true" type="xsd:decimal"/>
+     <element name="GLCode4" nillable="true" type="xsd:string"/>
+     <element name="GLCode4Amount" nillable="true" type="xsd:decimal"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="MCCCode" nillable="true" type="xsd:string"/>
+     <element name="miscCost" nillable="true" type="xsd:decimal"/>
+     <element name="numTransactionsAllowedForAuth" type="xsd:short"/>
+     <element name="openForAirlineMerchantGroup" type="tns2:char"/>
+     <element name="openForBusinessServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForCarRentalsMerchantGroup" type="tns2:char"/>
+     <element name="openForFinancialServicesMerchantGroup" type="tns2:char"/>
+     <element name="openForFuelMerchantGroup" type="tns2:char"/>
+     <element name="openForHotelsMerchantGroup" type="tns2:char"/>
+     <element name="openForLegalAndInsuranceMerchantGroup" type="tns2:char"/>
+     <element name="openForMaintenanceMerchantGroup" type="tns2:char"/>
+     <element name="openForMedicalMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscMerchantGroup" type="tns2:char"/>
+     <element name="openForMiscTransportationMerchantGroup" type="tns2:char"/>
+     <element name="openForRestaurantsMerchantGroup" type="tns2:char"/>
+     <element name="PONumber" nillable="true" type="xsd:string"/>
+     <element name="promptedIDDriver" nillable="true" type="xsd:string"/>
+     <element name="repairOrderNumber" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="totalLaborCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalPartsCost" nillable="true" type="xsd:decimal"/>
+     <element name="totalTaxCost" nillable="true" type="xsd:decimal"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="useGLCode1AsDefault" type="tns2:char"/>
+     <element name="vehicleNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorInvoiceNumber" nillable="true" type="xsd:string"/>
+     <element name="vendorNumber" nillable="true" type="xsd:string"/>
+     <element name="warrantyPeriod" nillable="true" type="xsd:string"/>
+     <element name="warrantyReport" type="tns2:char"/>
+     <element name="mustBeExactAmountForAuth" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="VirtualCardAddResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="CVC2" type="xsd:short"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="expirationMMYY" type="xsd:int"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardInquiryRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="CardInquiryResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="atmAccess" type="tns2:char"/>
+     <element name="cardBalance" type="xsd:double"/>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardStatus" type="tns2:char"/>
+     <element name="cashLimit" type="xsd:double"/>
+     <element name="cashRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="cashUsed" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="dieselGallonLimit" type="xsd:int"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="driverLicenseNumber" nillable="true" type="xsd:string"/>
+     <element name="driverLicenseState" nillable="true" type="xsd:string"/>
+     <element name="driverName" nillable="true" type="xsd:string"/>
+     <element name="employeeNumber" nillable="true" type="xsd:string"/>
+     <element name="oilDollarLimit" type="xsd:double"/>
+     <element name="oilDollarsUsed" type="xsd:double"/>
+     <element name="oilQuartLimit" type="xsd:int"/>
+     <element name="oilQuartsUsed" type="xsd:int"/>
+     <element name="oilRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="oneTimeCashLimit" type="xsd:double"/>
+     <element name="oneTimePurchaseLimit" type="xsd:double"/>
+     <element name="phoneLimit" type="xsd:double"/>
+     <element name="phoneRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="phoneUsed" type="xsd:double"/>
+     <element name="primaryCardNumber" nillable="true" type="xsd:string"/>
+     <element name="purchaseLimit" type="xsd:double"/>
+     <element name="purchaseRenewDayOfWeek" nillable="true" type="xsd:string"/>
+     <element name="purchaseUsed" type="xsd:double"/>
+     <element name="reeferGallonLimit" type="xsd:int"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="trailerNumber" nillable="true" type="xsd:string"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="unitNumber" nillable="true" type="xsd:string"/>
+     <element name="voiceMailEmail" type="tns2:char"/>
+     <element name="cashRenewDailyReset" type="xsd:boolean"/>
+     <element name="cashRenewResetByTrip" type="xsd:boolean"/>
+     <element name="companyStandards" type="xsd:boolean"/>
+     <element name="conferenceCall" type="xsd:boolean"/>
+     <element name="expressCash" type="xsd:boolean"/>
+     <element name="faxMail" type="xsd:boolean"/>
+     <element name="fuelPurchase" type="xsd:boolean"/>
+     <element name="informationService" type="xsd:boolean"/>
+     <element name="limitedNetworkByCard" type="xsd:boolean"/>
+     <element name="messageService" type="xsd:boolean"/>
+     <element name="oilRenewDailyReset" type="xsd:boolean"/>
+     <element name="oilRenewResetByTrip" type="xsd:boolean"/>
+     <element name="oneTimeFuelOffNetwork" type="xsd:boolean"/>
+     <element name="phoneRenewDailyReset" type="xsd:boolean"/>
+     <element name="phoneRenewResetByTrip" type="xsd:boolean"/>
+     <element name="phoneService" type="xsd:boolean"/>
+     <element name="purchaseRenewDailyReset" type="xsd:boolean"/>
+     <element name="purchaseRenewResetByTrip" type="xsd:boolean"/>
+     <element name="vruAccess" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckInquiryRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="sequenceNumber" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckInquiryResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="driverNumber" nillable="true" type="xsd:string"/>
+     <element name="expressCheckAmount" type="xsd:double"/>
+     <element name="expressCheckBalance" type="xsd:double"/>
+     <element name="expressCheckCode" nillable="true" type="xsd:string"/>
+     <element name="expressCheckFee" type="xsd:double"/>
+     <element name="fleetId" nillable="true" type="xsd:string"/>
+     <element name="lastUseCity" nillable="true" type="xsd:string"/>
+     <element name="lastUseDateTime" nillable="true" type="xsd:dateTime"/>
+     <element name="lastUseLocationCode" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="purposeCode" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="status" type="tns2:char"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="unitNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckIssueRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="amount" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="driverNumber" nillable="true" type="xsd:string"/>
+     <element name="expressCode" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="fleetId" nillable="true" type="xsd:string"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="locationCode" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="plusLessFlag" type="tns2:char"/>
+     <element name="purposeCode" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+     <element name="tripNumber" nillable="true" type="xsd:string"/>
+     <element name="unitNumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckIssueResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="amountDue" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="expressCheckAmount" type="xsd:double"/>
+     <element name="expressCheckFee" type="xsd:double"/>
+     <element name="nextAmountFactor" nillable="true" type="xsd:string"/>
+     <element name="nextSequenceAvailable" nillable="true" type="xsd:string"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckMaintenanceRequest">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="expressCheckFunction" type="tns2:char"/>
+     <element name="message" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="pin" nillable="true" type="xsd:string"/>
+     <element name="securityInfo" nillable="true" type="xsd:string"/>
+     <element name="sequenceNumber" nillable="true" type="xsd:string"/>
+     <element name="signOnName" nillable="true" type="xsd:string"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ExpressCheckMaintenanceResponse">
+    <sequence>
+     <element name="accountCode" nillable="true" type="xsd:string"/>
+     <element name="codeBalance" type="xsd:double"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="discretionaryData" nillable="true" type="xsd:string"/>
+     <element name="locationCode" nillable="true" type="xsd:string"/>
+     <element name="originalAmount" type="xsd:double"/>
+     <element name="responseCode" type="xsd:int"/>
+     <element name="responseMessage" nillable="true" type="xsd:string"/>
+     <element name="status" type="tns2:char"/>
+     <element name="trackingNumber" type="xsd:long"/>
+    </sequence>
+   </complexType>
+  </schema>
+    <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <simpleType name="char">
+    <restriction base="xsd:string">
+     <length value="1"/>
+    </restriction>
+   </simpleType>
+  </schema>
+  </wsdl:types>
+  <wsdl:message name="cardInquiryRequest">
+    <wsdl:part element="intf:cardInquiry" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardInquiryResponse">
+    <wsdl:part element="intf:cardInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckInquiryRequest">
+    <wsdl:part element="intf:expressCheckInquiry" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="loadMoneyResponse">
+    <wsdl:part element="intf:loadMoneyResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pinResetRequest">
+    <wsdl:part element="intf:pinReset" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardInquiryResponse">
+    <wsdl:part element="intf:virtualCardInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardInquiryAsyncResponse">
+    <wsdl:part element="intf:virtualCardInquiryAsyncResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pinSetResponse">
+    <wsdl:part element="intf:pinSetResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardInquiryAsyncRequest">
+    <wsdl:part element="intf:virtualCardInquiryAsync" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardAddRequest">
+    <wsdl:part element="intf:virtualCardAdd" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardUpdateRequest">
+    <wsdl:part element="intf:virtualCardUpdate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardAddAsyncResponse">
+    <wsdl:part element="intf:virtualCardAddAsyncResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckMaintenanceRequest">
+    <wsdl:part element="intf:expressCheckMaintenance" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckMaintenanceResponse">
+    <wsdl:part element="intf:expressCheckMaintenanceResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckIssueRequest">
+    <wsdl:part element="intf:expressCheckIssue" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardUpdateRequest">
+    <wsdl:part element="intf:cardUpdate" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckRetrievalRequest">
+    <wsdl:part element="intf:expressCheckRetrieval" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="loadMoneyCancelResponse">
+    <wsdl:part element="intf:loadMoneyCancelResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardBlockUnblockRequest">
+    <wsdl:part element="intf:cardBlockUnblock" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardUpdateResponse">
+    <wsdl:part element="intf:virtualCardUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pinResetResponse">
+    <wsdl:part element="intf:pinResetResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckBatchResponse">
+    <wsdl:part element="intf:expressCheckBatchResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="pinSetRequest">
+    <wsdl:part element="intf:pinSet" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckInquiryResponse">
+    <wsdl:part element="intf:expressCheckInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="loadMoneyRequest">
+    <wsdl:part element="intf:loadMoney" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardAddResponse">
+    <wsdl:part element="intf:virtualCardAddResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckBatchRequest">
+    <wsdl:part element="intf:expressCheckBatch" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardUpdateAsyncRequest">
+    <wsdl:part element="intf:virtualCardUpdateAsync" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardUpdateAsyncResponse">
+    <wsdl:part element="intf:virtualCardUpdateAsyncResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardUpdateResponse">
+    <wsdl:part element="intf:cardUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardInquiryRequest">
+    <wsdl:part element="intf:virtualCardInquiry" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="loadMoneyCancelRequest">
+    <wsdl:part element="intf:loadMoneyCancel" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cardBlockUnblockResponse">
+    <wsdl:part element="intf:cardBlockUnblockResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckIssueResponse">
+    <wsdl:part element="intf:expressCheckIssueResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="virtualCardAddAsyncRequest">
+    <wsdl:part element="intf:virtualCardAddAsync" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="expressCheckRetrievalResponse">
+    <wsdl:part element="intf:expressCheckRetrievalResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="RealTimeOnline">
+    <wsdl:operation name="pinReset">
+      <wsdl:input message="intf:pinResetRequest" name="pinResetRequest"/>
+      <wsdl:output message="intf:pinResetResponse" name="pinResetResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cardUpdate">
+      <wsdl:input message="intf:cardUpdateRequest" name="cardUpdateRequest"/>
+      <wsdl:output message="intf:cardUpdateResponse" name="cardUpdateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardInquiryAsync">
+      <wsdl:input message="intf:virtualCardInquiryAsyncRequest" name="virtualCardInquiryAsyncRequest"/>
+      <wsdl:output message="intf:virtualCardInquiryAsyncResponse" name="virtualCardInquiryAsyncResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardAddAsync">
+      <wsdl:input message="intf:virtualCardAddAsyncRequest" name="virtualCardAddAsyncRequest"/>
+      <wsdl:output message="intf:virtualCardAddAsyncResponse" name="virtualCardAddAsyncResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cardBlockUnblock">
+      <wsdl:input message="intf:cardBlockUnblockRequest" name="cardBlockUnblockRequest"/>
+      <wsdl:output message="intf:cardBlockUnblockResponse" name="cardBlockUnblockResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardUpdate">
+      <wsdl:input message="intf:virtualCardUpdateRequest" name="virtualCardUpdateRequest"/>
+      <wsdl:output message="intf:virtualCardUpdateResponse" name="virtualCardUpdateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckBatch">
+      <wsdl:input message="intf:expressCheckBatchRequest" name="expressCheckBatchRequest"/>
+      <wsdl:output message="intf:expressCheckBatchResponse" name="expressCheckBatchResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckRetrieval">
+      <wsdl:input message="intf:expressCheckRetrievalRequest" name="expressCheckRetrievalRequest"/>
+      <wsdl:output message="intf:expressCheckRetrievalResponse" name="expressCheckRetrievalResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="loadMoney">
+      <wsdl:input message="intf:loadMoneyRequest" name="loadMoneyRequest"/>
+      <wsdl:output message="intf:loadMoneyResponse" name="loadMoneyResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="loadMoneyCancel">
+      <wsdl:input message="intf:loadMoneyCancelRequest" name="loadMoneyCancelRequest"/>
+      <wsdl:output message="intf:loadMoneyCancelResponse" name="loadMoneyCancelResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="pinSet">
+      <wsdl:input message="intf:pinSetRequest" name="pinSetRequest"/>
+      <wsdl:output message="intf:pinSetResponse" name="pinSetResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardInquiry">
+      <wsdl:input message="intf:virtualCardInquiryRequest" name="virtualCardInquiryRequest"/>
+      <wsdl:output message="intf:virtualCardInquiryResponse" name="virtualCardInquiryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardAdd">
+      <wsdl:input message="intf:virtualCardAddRequest" name="virtualCardAddRequest"/>
+      <wsdl:output message="intf:virtualCardAddResponse" name="virtualCardAddResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cardInquiry">
+      <wsdl:input message="intf:cardInquiryRequest" name="cardInquiryRequest"/>
+      <wsdl:output message="intf:cardInquiryResponse" name="cardInquiryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckInquiry">
+      <wsdl:input message="intf:expressCheckInquiryRequest" name="expressCheckInquiryRequest"/>
+      <wsdl:output message="intf:expressCheckInquiryResponse" name="expressCheckInquiryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckIssue">
+      <wsdl:input message="intf:expressCheckIssueRequest" name="expressCheckIssueRequest"/>
+      <wsdl:output message="intf:expressCheckIssueResponse" name="expressCheckIssueResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckMaintenance">
+      <wsdl:input message="intf:expressCheckMaintenanceRequest" name="expressCheckMaintenanceRequest"/>
+      <wsdl:output message="intf:expressCheckMaintenanceResponse" name="expressCheckMaintenanceResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardUpdateAsync">
+      <wsdl:input message="intf:virtualCardUpdateAsyncRequest" name="virtualCardUpdateAsyncRequest"/>
+      <wsdl:output message="intf:virtualCardUpdateAsyncResponse" name="virtualCardUpdateAsyncResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RealTimeOnlineSoapBinding" type="intf:RealTimeOnline">
+<wsaw:UsingAddressing wsdl:required="false" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pinReset">
+      <wsdlsoap:operation soapAction="pinReset"/>
+      <wsdl:input name="pinResetRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pinResetResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardUpdate">
+      <wsdlsoap:operation soapAction="cardUpdate"/>
+      <wsdl:input name="cardUpdateRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cardUpdateResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardInquiryAsync">
+      <wsdlsoap:operation soapAction="virtualCardInquiryAsync"/>
+      <wsdl:input name="virtualCardInquiryAsyncRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardInquiryAsyncResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardAddAsync">
+      <wsdlsoap:operation soapAction="virtualCardAddAsync"/>
+      <wsdl:input name="virtualCardAddAsyncRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardAddAsyncResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardBlockUnblock">
+      <wsdlsoap:operation soapAction="cardBlockUnblock"/>
+      <wsdl:input name="cardBlockUnblockRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cardBlockUnblockResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardUpdate">
+      <wsdlsoap:operation soapAction="virtualCardUpdate"/>
+      <wsdl:input name="virtualCardUpdateRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardUpdateResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckBatch">
+      <wsdlsoap:operation soapAction="expressCheckBatch"/>
+      <wsdl:input name="expressCheckBatchRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="expressCheckBatchResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckRetrieval">
+      <wsdlsoap:operation soapAction="expressCheckRetrieval"/>
+      <wsdl:input name="expressCheckRetrievalRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="expressCheckRetrievalResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadMoney">
+      <wsdlsoap:operation soapAction="loadMoney"/>
+      <wsdl:input name="loadMoneyRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadMoneyResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadMoneyCancel">
+      <wsdlsoap:operation soapAction="loadMoneyCancel"/>
+      <wsdl:input name="loadMoneyCancelRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadMoneyCancelResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pinSet">
+      <wsdlsoap:operation soapAction="pinSet"/>
+      <wsdl:input name="pinSetRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pinSetResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardInquiry">
+      <wsdlsoap:operation soapAction="virtualCardInquiry"/>
+      <wsdl:input name="virtualCardInquiryRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardInquiryResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardAdd">
+      <wsdlsoap:operation soapAction="virtualCardAdd"/>
+      <wsdl:input name="virtualCardAddRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardAddResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cardInquiry">
+      <wsdlsoap:operation soapAction="cardInquiry"/>
+      <wsdl:input name="cardInquiryRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cardInquiryResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckInquiry">
+      <wsdlsoap:operation soapAction="expressCheckInquiry"/>
+      <wsdl:input name="expressCheckInquiryRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="expressCheckInquiryResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckIssue">
+      <wsdlsoap:operation soapAction="expressCheckIssue"/>
+      <wsdl:input name="expressCheckIssueRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="expressCheckIssueResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="expressCheckMaintenance">
+      <wsdlsoap:operation soapAction="expressCheckMaintenance"/>
+      <wsdl:input name="expressCheckMaintenanceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="expressCheckMaintenanceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="virtualCardUpdateAsync">
+      <wsdlsoap:operation soapAction="virtualCardUpdateAsync"/>
+      <wsdl:input name="virtualCardUpdateAsyncRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="virtualCardUpdateAsyncResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RealTimeOnlineService">
+    <wsdl:port binding="intf:RealTimeOnlineSoapBinding" name="RealTimeOnline">
+      <wsdlsoap:address location="https://w6.iconnectdata.com:443/cows/services/RealTimeOnline"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

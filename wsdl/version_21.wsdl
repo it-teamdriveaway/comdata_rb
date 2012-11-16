@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FleetCredit" targetNamespace="http://fleetCredit.comdata.com/maintenance/" xmlns:excpn="http://fleetCredit.comdata.com/exception/" xmlns:fc="http://fleetCredit.comdata.com/maintenance/" xmlns:fcdom="http://fleetCredit.comdata.com/domain/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://fleetCredit.comdata.com/maintenance/" schemaLocation="fleetCredit.xsd"/>
+		</xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://fleetCredit.comdata.com/exception/" schemaLocation="exception.xsd"/>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="VehicleIdDeleteResponse">
+    <wsdl:part element="fc:VehicleIdDeleteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardSecurityCodeInquiryResponse">
+    <wsdl:part element="fc:CardSecurityCodeInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardSecurityCodeInquiryRequest">
+    <wsdl:part element="fc:CardSecurityCodeInquiryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardInquiryRequest">
+    <wsdl:part element="fc:CardInquiryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdInquireResponse">
+    <wsdl:part element="fc:DriverIdInquireResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdUpdateResponse">
+    <wsdl:part element="fc:DriverIdUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerProfileLimitUpdateResponse">
+    <wsdl:part element="fc:CustomerProfileLimitUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdDeleteRequest">
+    <wsdl:part element="fc:VehicleIdDeleteRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardProfileLimitUpdateRequest">
+    <wsdl:part element="fc:CardProfileLimitUpdateRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdUpdateRequest">
+    <wsdl:part element="fc:VehicleIdUpdateRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCardResponse">
+    <wsdl:part element="fc:UpdateCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="BusinessException">
+    <wsdl:part element="excpn:BusinessException" name="fault"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdAddResponse">
+    <wsdl:part element="fc:DriverIdAddResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RtTransactionRequest">
+    <wsdl:part element="fc:RtTransactionRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="RtTransactionResponse">
+    <wsdl:part element="fc:RtTransactionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerProfileLimitInquiryResponse">
+    <wsdl:part element="fc:CustomerProfileLimitInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardProfileLimitInquiryRequest">
+    <wsdl:part element="fc:CardProfileLimitInquiryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdAddRequest">
+    <wsdl:part element="fc:VehicleIdAddRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdInquireResponse">
+    <wsdl:part element="fc:VehicleIdInquireResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdDeleteResponse">
+    <wsdl:part element="fc:DriverIdDeleteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdDeleteRequest">
+    <wsdl:part element="fc:DriverIdDeleteRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdInquireRequest">
+    <wsdl:part element="fc:VehicleIdInquireRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdAddResponse">
+    <wsdl:part element="fc:VehicleIdAddResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddCardResponse">
+    <wsdl:part element="fc:AddCardResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardInquiryResponse">
+    <wsdl:part element="fc:CardInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardProfileLimitUpdateResponse">
+    <wsdl:part element="fc:CardProfileLimitUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddCardRequest">
+    <wsdl:part element="fc:AddCardRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdUpdateRequest">
+    <wsdl:part element="fc:DriverIdUpdateRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdAddRequest">
+    <wsdl:part element="fc:DriverIdAddRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateCardRequest">
+    <wsdl:part element="fc:UpdateCardRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CardProfileLimitInquiryResponse">
+    <wsdl:part element="fc:CardProfileLimitInquiryResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DriverIdInquireRequest">
+    <wsdl:part element="fc:DriverIdInquireRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="VehicleIdUpdateResponse">
+    <wsdl:part element="fc:VehicleIdUpdateResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerProfileLimitUpdateRequest">
+    <wsdl:part element="fc:CustomerProfileLimitUpdateRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CustomerProfileLimitInquiryRequest">
+    <wsdl:part element="fc:CustomerProfileLimitInquiryRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="FleetCreditWS">
+    <wsdl:operation name="inquireCard">
+      <wsdl:input message="fc:CardInquiryRequest"/>
+      <wsdl:output message="fc:CardInquiryResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCard">
+      <wsdl:input message="fc:UpdateCardRequest"/>
+      <wsdl:output message="fc:UpdateCardResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="addCard">
+      <wsdl:input message="fc:AddCardRequest"/>
+      <wsdl:output message="fc:AddCardResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCustomerProfileLimits">
+      <wsdl:input message="fc:CustomerProfileLimitInquiryRequest"/>
+      <wsdl:output message="fc:CustomerProfileLimitInquiryResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProfileLimits">
+      <wsdl:input message="fc:CustomerProfileLimitUpdateRequest"/>
+      <wsdl:output message="fc:CustomerProfileLimitUpdateResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCardSecurityCode">
+      <wsdl:input message="fc:CardSecurityCodeInquiryRequest"/>
+      <wsdl:output message="fc:CardSecurityCodeInquiryResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCardProfileLimits">
+      <wsdl:input message="fc:CardProfileLimitInquiryRequest"/>
+      <wsdl:output message="fc:CardProfileLimitInquiryResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCardProfileLimits">
+      <wsdl:input message="fc:CardProfileLimitUpdateRequest"/>
+      <wsdl:output message="fc:CardProfileLimitUpdateResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="inquireDriverId">
+      <wsdl:input message="fc:DriverIdInquireRequest"/>
+      <wsdl:output message="fc:DriverIdInquireResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="addDriverId">
+      <wsdl:input message="fc:DriverIdAddRequest"/>
+      <wsdl:output message="fc:DriverIdAddResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateDriverId">
+      <wsdl:input message="fc:DriverIdUpdateRequest"/>
+      <wsdl:output message="fc:DriverIdUpdateResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDriverId">
+      <wsdl:input message="fc:DriverIdDeleteRequest"/>
+      <wsdl:output message="fc:DriverIdDeleteResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="inquireVehicleId">
+      <wsdl:input message="fc:VehicleIdInquireRequest"/>
+      <wsdl:output message="fc:VehicleIdInquireResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="addVehicleId">
+      <wsdl:input message="fc:VehicleIdAddRequest"/>
+      <wsdl:output message="fc:VehicleIdAddResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicleId">
+      <wsdl:input message="fc:VehicleIdUpdateRequest"/>
+      <wsdl:output message="fc:VehicleIdUpdateResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVehicleId">
+      <wsdl:input message="fc:VehicleIdDeleteRequest"/>
+      <wsdl:output message="fc:VehicleIdDeleteResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+    <wsdl:operation name="realTimeTransactionHistory">
+      <wsdl:input message="fc:RtTransactionRequest"/>
+      <wsdl:output message="fc:RtTransactionResponse"/>
+      <wsdl:fault message="fc:BusinessException" name="BusinessException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FleetCreditWS" type="fc:FleetCreditWS">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="inquireCard">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireCard"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCard">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/updateCard"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addCard">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/addCard"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCustomerProfileLimits">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireCustomerProfileLimits"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCustomerProfileLimits">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/updateCustomerProfileLimits"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCardSecurityCode">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireCardSecurityCode"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquireCardProfileLimits">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireCardProfileLimits"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateCardProfileLimits">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/updateCardProfileLimits"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquireDriverId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireDriverId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addDriverId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/addDriverId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateDriverId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/updateDriverId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDriverId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/deleteDriverId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="inquireVehicleId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/inquireVehicleId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addVehicleId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/addVehicleId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateVehicleId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/updateVehicleId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteVehicleId">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/deleteVehicleId"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="realTimeTransactionHistory">
+      <wsdlsoap:operation soapAction="http://fleetCredit.comdata.com/FleetCreditWS/realTimeTransactionHistory"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="BusinessException">
+        <wsdlsoap:fault name="BusinessException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FleetCreditWS">
+    <wsdl:port binding="fc:FleetCreditWS" name="FleetCreditWS">
+      <wsdlsoap:address location="https://w6cert.iconnectdata.com:443/fcws/services/FleetCreditWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
