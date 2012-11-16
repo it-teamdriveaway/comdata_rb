@@ -5,6 +5,7 @@ GEM
       gyoku (>= 0.4.0)
       nokogiri (>= 1.4.0)
     builder (3.1.4)
+    diff-lcs (1.1.3)
     gyoku (0.4.6)
       builder (>= 2.1.2)
     httpi (1.1.1)
@@ -12,6 +13,14 @@ GEM
     nokogiri (1.5.5)
     nori (1.1.3)
     rack (1.4.1)
+    rspec (2.12.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+    rspec-core (2.12.0)
+    rspec-expectations (2.12.0)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.12.0)
     savon (1.2.0)
       akami (~> 1.2.0)
       builder (>= 2.1.2)
@@ -20,6 +29,9 @@ GEM
       nokogiri (>= 1.4.0)
       nori (~> 1.1.0)
       wasabi (~> 2.5.0)
+    savon_spec (1.3.0)
+      rspec (>= 2.0.0)
+      savon (~> 1.0)
     wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
@@ -29,3 +41,4 @@ PLATFORMS
 
 DEPENDENCIES
   savon
+  savon_spec
